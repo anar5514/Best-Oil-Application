@@ -12,8 +12,6 @@ namespace BestOilApp
 {
     public partial class BestOil : Form
     {
-        public double RightUnitTotal;
-
         public BestOil()
         {
             InitializeComponent();
@@ -172,7 +170,8 @@ namespace BestOilApp
                 + (pricecheese * countcheese)
                 + (pricecola * countcola)).ToString();
 
-            totalPayment.Text =  (Convert.ToDouble(labelTotalLeft.Text) + Convert.ToDouble(labelTotalRight.Text)).ToString();
+            if (labelTotalRight.Text == "0" && labelTotalLeft.Text != null) MessageBox.Show("There is no order !","Warning");
+            else totalPayment.Text =  (Convert.ToDouble(labelTotalLeft.Text) + Convert.ToDouble(labelTotalRight.Text)).ToString();
         }
     }
 

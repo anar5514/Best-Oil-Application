@@ -282,6 +282,7 @@
             this.countHamburger.Text = "0";
             this.countHamburger.Enter += new System.EventHandler(this.counttxtbox_Enter);
             this.countHamburger.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.countHotdog_KeyPress);
+            this.countHamburger.Leave += new System.EventHandler(this.counttxtbox_Leave);
             // 
             // priceCocacola
             // 
@@ -317,6 +318,7 @@
             this.countCheesebrgr.Text = "0";
             this.countCheesebrgr.Enter += new System.EventHandler(this.counttxtbox_Enter);
             this.countCheesebrgr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.countHotdog_KeyPress);
+            this.countCheesebrgr.Leave += new System.EventHandler(this.counttxtbox_Leave);
             // 
             // countCocacola
             // 
@@ -328,6 +330,7 @@
             this.countCocacola.Text = "0";
             this.countCocacola.Enter += new System.EventHandler(this.counttxtbox_Enter);
             this.countCocacola.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.countHotdog_KeyPress);
+            this.countCocacola.Leave += new System.EventHandler(this.counttxtbox_Leave);
             // 
             // label15
             // 
