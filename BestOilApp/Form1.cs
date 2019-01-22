@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -172,6 +174,35 @@ namespace BestOilApp
 
             if (labelTotalRight.Text == "0" && labelTotalLeft.Text != null) MessageBox.Show("There is no order !","Warning");
             else totalPayment.Text =  (Convert.ToDouble(labelTotalLeft.Text) + Convert.ToDouble(labelTotalRight.Text)).ToString();
+
+
+            BestOilData bestOilData = new BestOilData()
+            {
+                FuelComboBox = comboBoxFuel.Text,
+                PriceTextBox = txtboxPrice.Text,
+                QuantityTextBox = txtboxQuantity.Text,
+                SumTextBox = txtboxSum.Text,
+                TotalLeft = labelTotalLeft.Text,
+
+                HotDogPriceTextBox = priceHotdog.Text,
+                HamburgerPriceTextBox = priceHamburger.Text,
+                CheeseburgerPriceTextBox = priceCheesebrgr.Text,
+                CocacolaPriceTextBox = priceCocacola.Text,
+
+                HotDogQuantityTextBox = countHotdog.Text,
+                HamburgerQuantityTextBox = countHamburger.Text,
+                CheeseburgerQuantityTextBox = countCheesebrgr.Text,
+                CocacolaQuantityTextBox = countCocacola.Text,
+
+                TotalRight = labelTotalRight.Text,
+
+                TotalPayment = totalPayment.Text
+            };
+
+            var content = JsonConvert.SerializeObject(bestOilData);
+
+            File.WriteAllText("BestOil.json", content);
+
         }
     }
 
